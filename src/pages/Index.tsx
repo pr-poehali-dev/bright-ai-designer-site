@@ -30,17 +30,14 @@ const Index = () => {
 
   const services = [
     {
-      icon: 'Sparkles',
       title: 'ИИ-генерация фото',
       description: 'Создание уникальных изображений для вашего бренда с помощью нейросетей'
     },
     {
-      icon: 'Target',
       title: 'Маркетинговые кампании',
       description: 'Визуальный контент для рекламных кампаний и соцсетей'
     },
     {
-      icon: 'Palette',
       title: 'Брендинг',
       description: 'Разработка визуального стиля и фирменной айдентики'
     }
@@ -53,20 +50,20 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <div className="min-h-screen bg-white text-black font-onest">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-black">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-oswald font-bold">
-            <span className="text-primary">AI</span>
-            <span className="text-secondary">PHOTO</span>
+          <div className="text-3xl font-built font-bold">
+            <span className="text-primary">RORY</span>
+            <span className="text-secondary">.AI</span>
           </div>
           <div className="hidden md:flex gap-8">
             {['home', 'portfolio', 'services', 'about', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`text-sm uppercase tracking-wider transition-colors hover:text-primary ${
-                  activeSection === section ? 'text-primary' : 'text-white/60'
+                className={`text-xs font-bold uppercase tracking-widest transition-colors hover:text-primary font-built ${
+                  activeSection === section ? 'text-primary' : 'text-black/60'
                 }`}
               >
                 {section === 'home' && 'Главная'}
@@ -77,52 +74,53 @@ const Index = () => {
               </button>
             ))}
           </div>
-          <Button size="sm" className="bg-primary hover:bg-primary/90">
+          <Button onClick={() => scrollToSection('contact')} size="sm" className="bg-primary hover:bg-primary/90 text-white font-built">
             Связаться
           </Button>
         </div>
       </nav>
 
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-oswald font-bold leading-none">
-                <span className="text-primary">ИИ</span>
-                <br />
-                <span className="text-secondary">ФОТО</span>
-                <br />
-                <span className="text-white">БРЕНДЫ</span>
-              </h1>
-              <p className="text-xl text-white/70 max-w-lg">
-                Создаю визуальный контент нового поколения для брендов с помощью искусственного интеллекта
-              </p>
-              <div className="flex gap-4">
-                <Button onClick={() => scrollToSection('portfolio')} size="lg" className="bg-primary hover:bg-primary/90 text-white">
-                  Смотреть работы
-                </Button>
-                <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-white">
-                  Обсудить проект
-                </Button>
+      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 bg-white relative overflow-hidden">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-12">
+            <div className="space-y-6 animate-fade-in">
+              <div className="text-9xl md:text-[12rem] lg:text-[16rem] font-built font-bold leading-none tracking-tighter">
+                <span className="text-primary">RORY</span>
+                <span className="text-secondary">.AI</span>
               </div>
+              <h2 className="text-4xl md:text-6xl font-built uppercase tracking-tight text-black/80">
+                НЕСТАНДАРТНАЯ ТИПОГРАФИКА!
+              </h2>
+              <p className="text-2xl md:text-3xl font-light text-black/60 max-w-3xl mx-auto leading-relaxed">
+                Влезаем там где не надо, хаос <br /> Смешно, дерзко, креативно, фэшн
+              </p>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary via-black to-secondary rounded-lg animate-pulse"></div>
+            <div className="flex gap-6 justify-center">
+              <Button onClick={() => scrollToSection('portfolio')} size="lg" className="bg-primary hover:bg-primary/90 text-white font-built text-lg px-10 py-7">
+                СМОТРЕТЬ РАБОТЫ
+              </Button>
+              <Button onClick={() => scrollToSection('contact')} size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white font-built text-lg px-10 py-7">
+                ОБСУДИТЬ ПРОЕКТ
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="portfolio" className="min-h-screen py-32 px-6 bg-white text-black">
+      <section id="portfolio" className="min-h-screen py-32 px-6 bg-black text-white relative">
+        <div className="absolute top-20 left-20 text-primary text-8xl">✗</div>
+        <div className="absolute bottom-20 right-20 text-secondary text-8xl">✗</div>
         <div className="container mx-auto">
-          <h2 className="text-6xl md:text-7xl font-oswald font-bold mb-16 animate-fade-in">
+          <h2 className="text-7xl md:text-9xl font-built font-bold mb-20 animate-fade-in">
             ПОРТФОЛИО
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {portfolioItems.map((item, index) => (
               <div
                 key={item.id}
-                className="group relative overflow-hidden aspect-square rounded-lg cursor-pointer animate-fade-in"
+                className="group relative overflow-hidden aspect-square cursor-pointer animate-fade-in border-4 border-white"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <img
@@ -130,47 +128,46 @@ const Index = () => {
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-sm text-primary uppercase tracking-wider mb-2">{item.category}</p>
-                    <h3 className="text-2xl font-oswald font-bold text-white">{item.title}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <p className="text-sm text-white font-built uppercase tracking-widest mb-2">{item.category}</p>
+                    <h3 className="text-3xl font-built font-bold text-white">{item.title}</h3>
                   </div>
                 </div>
+                <div className="absolute top-4 right-4 text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">✗</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="services" className="min-h-screen py-32 px-6">
+      <section id="services" className="min-h-screen py-32 px-6 bg-primary text-white">
         <div className="container mx-auto">
-          <h2 className="text-6xl md:text-7xl font-oswald font-bold mb-16 animate-fade-in">
+          <h2 className="text-7xl md:text-9xl font-built font-bold mb-20 animate-fade-in">
             УСЛУГИ
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 rounded-lg p-8 hover:border-primary transition-colors animate-fade-in"
+                className="border-4 border-white p-10 hover:bg-white hover:text-primary transition-all duration-300 animate-fade-in group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-6">
-                  <Icon name={service.icon as any} size={32} className="text-white" />
-                </div>
-                <h3 className="text-2xl font-oswald font-bold mb-4">{service.title}</h3>
-                <p className="text-white/70">{service.description}</p>
+                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">✗</div>
+                <h3 className="text-3xl font-built font-bold mb-4 uppercase">{service.title}</h3>
+                <p className="text-lg leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="about" className="min-h-screen py-32 px-6 bg-primary text-white">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-6xl md:text-7xl font-oswald font-bold mb-16 animate-fade-in">
+      <section id="about" className="min-h-screen py-32 px-6 bg-secondary text-black">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-7xl md:text-9xl font-built font-bold mb-20 animate-fade-in">
             О МНЕ
           </h2>
-          <div className="space-y-8 text-lg">
+          <div className="space-y-12 text-2xl leading-relaxed">
             <p className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
               Я специализируюсь на создании уникального визуального контента для брендов с помощью искусственного интеллекта. 
               Мой подход сочетает креативность дизайнера и возможности современных нейросетей.
@@ -179,72 +176,79 @@ const Index = () => {
               Работаю с fashion-брендами, e-commerce проектами и маркетинговыми агентствами. 
               Создаю контент для рекламных кампаний, соцсетей и брендинга.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 pt-8">
-              <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <div className="text-5xl font-oswald font-bold mb-2">150+</div>
-                <p className="text-white/80">Проектов</p>
+            <div className="grid md:grid-cols-3 gap-12 pt-16">
+              <div className="animate-fade-in border-4 border-black p-8 text-center" style={{ animationDelay: '0.3s' }}>
+                <div className="text-7xl font-built font-bold mb-4">150+</div>
+                <p className="text-xl font-built uppercase">Проектов</p>
               </div>
-              <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <div className="text-5xl font-oswald font-bold mb-2">50+</div>
-                <p className="text-white/80">Клиентов</p>
+              <div className="animate-fade-in border-4 border-black p-8 text-center" style={{ animationDelay: '0.4s' }}>
+                <div className="text-7xl font-built font-bold mb-4">50+</div>
+                <p className="text-xl font-built uppercase">Клиентов</p>
               </div>
-              <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <div className="text-5xl font-oswald font-bold mb-2">3+</div>
-                <p className="text-white/80">Года опыта</p>
+              <div className="animate-fade-in border-4 border-black p-8 text-center" style={{ animationDelay: '0.5s' }}>
+                <div className="text-7xl font-built font-bold mb-4">3+</div>
+                <p className="text-xl font-built uppercase">Года опыта</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="min-h-screen py-32 px-6 bg-secondary text-white">
-        <div className="container mx-auto max-w-2xl">
-          <h2 className="text-6xl md:text-7xl font-oswald font-bold mb-16 animate-fade-in">
+      <section id="contact" className="min-h-screen py-32 px-6 bg-white text-black relative">
+        <div className="absolute top-20 right-20 text-primary text-9xl rotate-45">✗</div>
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-7xl md:text-9xl font-built font-bold mb-20 animate-fade-in">
             КОНТАКТЫ
           </h2>
-          <form className="space-y-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <form className="space-y-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <div>
               <Input
                 type="text"
                 placeholder="Ваше имя"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white"
+                className="border-4 border-black text-black placeholder:text-black/40 focus:border-primary text-xl py-8 font-onest"
               />
             </div>
             <div>
               <Input
                 type="email"
                 placeholder="Email"
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white"
+                className="border-4 border-black text-black placeholder:text-black/40 focus:border-primary text-xl py-8 font-onest"
               />
             </div>
             <div>
               <Textarea
                 placeholder="Расскажите о вашем проекте"
-                rows={6}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white resize-none"
+                rows={8}
+                className="border-4 border-black text-black placeholder:text-black/40 focus:border-primary resize-none text-xl font-onest"
               />
             </div>
-            <Button size="lg" className="w-full bg-white text-secondary hover:bg-white/90">
-              Отправить заявку
+            <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-white font-built text-2xl py-8">
+              ОТПРАВИТЬ ЗАЯВКУ
             </Button>
           </form>
-          <div className="mt-16 flex justify-center gap-6">
-            <Button variant="ghost" size="icon" className="hover:text-primary">
-              <Icon name="Instagram" size={24} />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:text-primary">
-              <Icon name="Mail" size={24} />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:text-primary">
-              <Icon name="Send" size={24} />
-            </Button>
+          <div className="mt-20 flex justify-center gap-8">
+            <a href="#" className="text-black hover:text-primary transition-colors">
+              <div className="w-16 h-16 border-4 border-black hover:border-primary flex items-center justify-center">
+                <Icon name="Instagram" size={32} />
+              </div>
+            </a>
+            <a href="#" className="text-black hover:text-primary transition-colors">
+              <div className="w-16 h-16 border-4 border-black hover:border-primary flex items-center justify-center">
+                <Icon name="Mail" size={32} />
+              </div>
+            </a>
+            <a href="#" className="text-black hover:text-primary transition-colors">
+              <div className="w-16 h-16 border-4 border-black hover:border-primary flex items-center justify-center">
+                <Icon name="Send" size={32} />
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
-      <footer className="bg-black border-t border-white/10 py-8 px-6">
-        <div className="container mx-auto text-center text-white/50 text-sm">
-          <p>© 2024 AI Photo. Все права защищены.</p>
+      <footer className="bg-black text-white border-t-4 border-white py-12 px-6">
+        <div className="container mx-auto text-center">
+          <p className="text-xl font-built">© 2024 RORY.AI — ВСЁ ПРАВА ЗАЩИЩЕНЫ</p>
         </div>
       </footer>
     </div>

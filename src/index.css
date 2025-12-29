@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/built-titling");
+@import url("https://fonts.cdnfonts.com/css/onest");
 
 @tailwind base;
 @tailwind components;
@@ -15,11 +16,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 4%;
 
-    --primary: 356 83% 57%;
+    --primary: 0 100% 44%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 199 89% 48%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 197 100% 55%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
@@ -99,7 +100,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Roboto", sans-serif;
+    font-family: "Onest", sans-serif;
   }
 
   h1,
@@ -108,8 +109,9 @@
   h4,
   h5,
   h6 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: "Built Titling", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
   }
 }

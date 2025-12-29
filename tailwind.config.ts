@@ -64,8 +64,8 @@ export default {
 				}
 			},
 			fontFamily: {
-				'oswald': ['Oswald', 'sans-serif'],
-				'roboto': ['Roboto', 'sans-serif'],
+				'built': ['Built Titling', 'sans-serif'],
+				'onest': ['Onest', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
